@@ -1,0 +1,9 @@
+#MenuHeader {
+    width: 100%;
+    background-color: #2D18BF;
+}
+
+#MenuHeader h1 {
+    color: white;
+    padding: 1% 0 1% 0;
+}
