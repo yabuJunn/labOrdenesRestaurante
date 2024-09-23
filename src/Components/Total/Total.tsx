@@ -1,6 +1,11 @@
 import { MenuConsumption } from '../../Types/MenuTypes'
-import { TotalItem } from '../TotalItem/TotalItem'
+
 import './Total.css'
+
+//Import Components
+
+import { Tip } from '../Tip/Tip'
+import { TotalItem } from '../TotalItem/TotalItem'
 
 interface TotalProps {
     orderArray: MenuConsumption
@@ -27,6 +32,8 @@ export const Total = ({ orderArray }: TotalProps) => {
                         return <TotalItem itemName={MenuOrder.name} itemPrice={MenuOrder.price} itemCuantity={MenuOrder.cuantity} key={MenuOrder.name}></TotalItem>
                     })}
                 </div>
+
+                <Tip></Tip>
             </div>
         </>
     }
