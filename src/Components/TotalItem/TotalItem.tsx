@@ -17,7 +17,7 @@ export const TotalItem = ({ itemName, itemPrice, itemCuantity }: TotalItemProps)
         <div className='TotalItemContainer'>
             <div className='TotalItemText'>
                 <p className='itemName'>{itemName} - ${itemPrice}</p>
-                <p className='itemPrice'>Cantidad: ${itemCuantity} - ${itemCuantity * itemPrice}</p>
+                <p className='itemPrice'>Cantidad: {itemCuantity} - ${itemCuantity * itemPrice}</p>
             </div>
 
             <div className='TotalItemButtonContainer'>

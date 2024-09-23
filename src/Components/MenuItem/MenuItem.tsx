@@ -4,7 +4,7 @@ import { useMenuItem } from '../../hooks/OrderHook'
 
 interface MenuItemProps {
     itemName: string,
-    itemPrice: string,
+    itemPrice: number,
     AddItem: (newOrder: MenuItemConsumption) => void
 }
 

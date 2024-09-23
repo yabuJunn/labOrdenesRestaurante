@@ -3,7 +3,7 @@ import { MenuItemConsumption } from "../Types/MenuTypes"
 
 interface useMenuItemProps {
     itemName: string,
-    itemPrice: string,
+    itemPrice: number,
     AddItem: (newOrder: MenuItemConsumption) => void
 }
 
@@ -12,7 +12,7 @@ export const useMenuItem = ({ itemName, itemPrice, AddItem }: useMenuItemProps) 
         AddItem({
             name: itemName,
             cuantity: 1,
-            price: parseInt(itemPrice)
+            price: itemPrice
         })
     }
 
