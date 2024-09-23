@@ -6,6 +6,7 @@ import './Total.css'
 
 import { Tip } from '../Tip/Tip'
 import { TotalItem } from '../TotalItem/TotalItem'
+import { TotalsAndTip } from '../TotalsAndTip/TotalsAndTip'
 
 interface TotalProps {
     orderArray: MenuConsumption,
@@ -35,6 +36,7 @@ export const Total = ({ orderArray, tipValue }: TotalProps) => {
                 </div>
 
                 <Tip></Tip>
+                <TotalsAndTip></TotalsAndTip>
             </div>
         </>
     }
