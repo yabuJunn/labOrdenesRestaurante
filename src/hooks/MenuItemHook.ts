@@ -6,8 +6,18 @@ export const useOrder = () => {
 
     const handleAddOrder = (newOrder: MenuItemConsumption) => {
         setOrder((prevOrder) => {
-            return [...prevOrder, newOrder]
+            const found = prevOrder.find(o => o.name === newOrder.name)
+
+            if (!found) {
+                return [...prevOrder, newOrder]
+            } else {
+                const index = prevOrder.indexOf(found)
+                const newArray = [...prevOrder]
+                newArray[index].cuantity += 1
+                return [...newArray]
+            }
         })
+
     }
 
     return {
