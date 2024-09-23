@@ -1,4 +1,4 @@
-interface MenuItemConsumption {
+export interface MenuItemConsumption {
     name: string,
     cuantity: number,
     price: number

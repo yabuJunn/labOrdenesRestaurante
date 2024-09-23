@@ -10,13 +10,13 @@ import { useOrder } from './hooks/MenuItemHook'
 
 function App() {
 
-  const order = useOrder()
+  const { order, handleAddOrder } = useOrder()
 
   return <>
     <Title></Title>
 
     <div id='menuAndResultContainer'>
-      <Menu></Menu>
+      <Menu AddItem={handleAddOrder}></Menu>
       <Total orderArray={order}></Total>
     </div>
   </>

@@ -14,6 +14,8 @@ export const Total = ({ orderArray }: TotalProps) => {
             </div>
         </>
     } else {
+        console.log(orderArray)
+
         return <>
             <div id="TotalContainer">
                 <h2>Consumption Summary</h2>
