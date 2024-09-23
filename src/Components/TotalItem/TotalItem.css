@@ -1,11 +1,32 @@
 .TotalItemContainer {
+    display: flex;
+    flex-direction: row;
 
+    justify-content: space-between;
+
+    width: 100%;
+    border: 1px red solid;
 }
 
-.TotalItemText {
-
-}
+.TotalItemText {}
 
 .TotalItemButtonContainer {
+    display: flex;
+    flex-direction: row;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.TotalItemButton {
+    border-radius: 50%;
+    width: 40%;
+    aspect-ratio: 1 / 1;
     
+    border: none;
+    background-color: brown;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
