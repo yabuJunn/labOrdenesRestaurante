@@ -1,23 +1,26 @@
 import './App.css'
 
 //Import hooks
+import { useOrder } from './hooks/MenuItemHook'
+import { useTip } from './hooks/TipHook'
 
 //Components
 import { Title } from './Components/Title/Title'
 import { Menu } from './Components/Menu/Menu'
 import { Total } from './Components/Total/Total'
-import { useOrder } from './hooks/MenuItemHook'
 
 function App() {
 
   const { order, handleAddOrder } = useOrder()
+
+  const { tip } = useTip()
 
   return <>
     <Title></Title>
 
     <div id='menuAndResultContainer'>
       <Menu AddItem={handleAddOrder}></Menu>
-      <Total orderArray={order}></Total>
+      <Total orderArray={order} tipValue={tip}></Total>
     </div>
   </>
 }

@@ -7,8 +7,13 @@ export const useTip = () => {
         setTip(newTipValue)
     }
 
+    const handleOnChangeTipComponent = (e: React.ChangeEvent<HTMLInputElement>) => {
+        console.log(e.target.value)
+    }
+
     return {
         tip,
-        handleSetTip
+        handleSetTip,
+        handleOnChangeTipComponent
     }
 }

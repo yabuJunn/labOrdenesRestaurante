@@ -8,10 +8,11 @@ import { Tip } from '../Tip/Tip'
 import { TotalItem } from '../TotalItem/TotalItem'
 
 interface TotalProps {
-    orderArray: MenuConsumption
+    orderArray: MenuConsumption,
+    tipValue: number
 }
 
-export const Total = ({ orderArray }: TotalProps) => {
+export const Total = ({ orderArray, tipValue }: TotalProps) => {
     if (orderArray.length === 0) {
         return <>
             <div id="TotalContainer">

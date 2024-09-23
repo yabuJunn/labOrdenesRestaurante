@@ -1,4 +1,13 @@
+import { useTip } from "../../hooks/TipHook"
+
+// interface TipPros {
+
+// }
+
 export const Tip = () => {
+
+    const { handleOnChangeTipComponent } = useTip()
+
     return <>
         <div id="TipContainer">
             <h3>Tip:</h3>
@@ -6,15 +15,15 @@ export const Tip = () => {
             <form id="TipForm">
                 <div className="tipOption">
                     <label htmlFor="tip-10">10%</label>
-                    <input type="radio" name="tip" id="tip-10" value={0.1} />
+                    <input type="radio" name="tip" id="tip-10" value={0.1} onChange={handleOnChangeTipComponent} />
                 </div>
                 <div className="tipOption">
                     <label htmlFor="tip-20">20%</label>
-                    <input type="radio" name="tip" id="tip-20" value={0.2} />
+                    <input type="radio" name="tip" id="tip-20" value={0.2} onChange={handleOnChangeTipComponent} />
                 </div>
                 <div className="tipOption">
                     <label htmlFor="tip-50">50%</label>
-                    <input type="radio" name="tip" id="tip-50" value={0.5} />
+                    <input type="radio" name="tip" id="tip-50" value={0.5} onChange={handleOnChangeTipComponent} />
                 </div>
             </form>
         </div>
