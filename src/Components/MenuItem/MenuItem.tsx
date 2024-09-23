@@ -1,6 +1,6 @@
-import { MouseEventHandler } from 'react'
 import { MenuItemConsumption } from '../../Types/MenuTypes'
 import './MenuItem.css'
+import { useMenuItem } from '../../hooks/OrderHook'
 
 interface MenuItemProps {
     itemName: string,
@@ -10,13 +10,7 @@ interface MenuItemProps {
 
 export const MenuItem = ({ itemName, itemPrice, AddItem }: MenuItemProps) => {
 
-    const handleOnClick: MouseEventHandler<HTMLDivElement> | undefined = () => {
-        AddItem({
-            name: itemName,
-            cuantity: 1,
-            price: parseInt(itemPrice)
-        })
-    }
+    const { handleOnClick } = useMenuItem({ itemName: itemName, itemPrice: itemPrice, AddItem: AddItem })
 
     return <>
         <div className="MenuItemContainer" onClick={handleOnClick}>
