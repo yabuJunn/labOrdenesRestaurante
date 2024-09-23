@@ -1,20 +1,24 @@
+import { useTotalsAndTip } from '../../hooks/TotalsAndTipHook'
+import { MenuConsumption } from '../../Types/MenuTypes'
 import './TotalsAndTip.css'
 
-// interface TotalsAndTipProps {
+interface TotalsAndTipProps {
+    orderArray: MenuConsumption,
+    tipValue: number
+}
 
-// }
+export const TotalsAndTip = ({ orderArray, tipValue }: TotalsAndTipProps) => {
 
-export const TotalsAndTip = () => {
-    const subtotal = ""
-    const tipTotal = ""
-    const total = ""
+    const { handleShowResult } = useTotalsAndTip(orderArray, tipValue)
+
+    const { subtotal, tip, total } = handleShowResult()
 
     return <>
         <div id="TotalsAndTipContainer">
             <h3>Totals and Tip</h3>
-            <p>Subtotal payable: {subtotal}</p>
-            <p>Tip:  {tipTotal}</p>
-            <p>Total: {total}</p>
+            <p>Subtotal payable: ${subtotal}</p>
+            <p>Tip:  ${tip}</p>
+            <p>Total: ${total}</p>
         </div>
     </>
 }

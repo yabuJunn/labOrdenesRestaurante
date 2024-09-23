@@ -8,7 +8,8 @@ export const useTip = () => {
     }
 
     const handleOnChangeTipComponent = (e: React.ChangeEvent<HTMLInputElement>) => {
-        console.log(e.target.value)
+        console.log(parseFloat(e.target.value))
+        handleSetTip(parseFloat(e.target.value))
     }
 
     return {

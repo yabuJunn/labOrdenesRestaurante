@@ -15,6 +15,8 @@ function App() {
 
   const { tip } = useTip()
 
+  console.log("New tipValue: ", tip)
+
   return <>
     <Title></Title>
 

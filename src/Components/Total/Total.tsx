@@ -36,7 +36,7 @@ export const Total = ({ orderArray, tipValue }: TotalProps) => {
                 </div>
 
                 <Tip></Tip>
-                <TotalsAndTip></TotalsAndTip>
+                <TotalsAndTip orderArray={orderArray} tipValue={tipValue}></TotalsAndTip>
             </div>
         </>
     }
