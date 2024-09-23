@@ -2,17 +2,15 @@ import './App.css'
 
 //Import hooks
 
-import { useState } from 'react'
-
 //Components
 import { Title } from './Components/Title/Title'
 import { Menu } from './Components/Menu/Menu'
-import { MenuConsumption } from './Types/MenuTypes'
 import { Total } from './Components/Total/Total'
+import { useOrder } from './hooks/MenuItemHook'
 
 function App() {
 
-  const [order, setOrder] = useState<MenuConsumption>([])
+  const order = useOrder()
 
   return <>
     <Title></Title>
