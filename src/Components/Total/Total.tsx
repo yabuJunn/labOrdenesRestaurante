@@ -33,7 +33,7 @@ export const Total = ({ orderArray, tipValue, handleAddOrder, handleOnChangeTipC
 
                 <div id='TotalItemsContainer'>
                     {orderArray.map((MenuOrder) => {
-                        return <TotalItem itemName={MenuOrder.name} itemPrice={MenuOrder.price} itemCuantity={MenuOrder.cuantity} key={MenuOrder.name}></TotalItem>
+                        return <TotalItem itemName={MenuOrder.name} itemPrice={MenuOrder.price} itemCuantity={MenuOrder.cuantity} key={MenuOrder.name} handleAddOrder={handleAddOrder}></TotalItem>
                     })}
                 </div>
 
