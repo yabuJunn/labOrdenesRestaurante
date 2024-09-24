@@ -1,4 +1,4 @@
-import { MenuConsumption } from '../../Types/MenuTypes'
+import { MenuConsumption, MenuItemConsumption } from '../../Types/MenuTypes'
 
 import './Total.css'
 
@@ -10,10 +10,12 @@ import { TotalsAndTip } from '../TotalsAndTip/TotalsAndTip'
 
 interface TotalProps {
     orderArray: MenuConsumption,
-    tipValue: number
+    tipValue: number,
+    handleAddOrder: (newOrder: MenuItemConsumption) => void,
+    handleOnChangeTipComponent: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
 
-export const Total = ({ orderArray, tipValue }: TotalProps) => {
+export const Total = ({ orderArray, tipValue, handleAddOrder, handleOnChangeTipComponent }: TotalProps) => {
     if (orderArray.length === 0) {
         return <>
             <div id="TotalContainer">
@@ -35,7 +37,7 @@ export const Total = ({ orderArray, tipValue }: TotalProps) => {
                     })}
                 </div>
 
-                <Tip></Tip>
+                <Tip handleOnChangeTipComponent={handleOnChangeTipComponent}></Tip>
                 <TotalsAndTip orderArray={orderArray} tipValue={tipValue}></TotalsAndTip>
             </div>
         </>

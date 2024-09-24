@@ -1,12 +1,10 @@
-import { useTip } from "../../hooks/TipHook"
+import './Tip.css'
 
-// interface TipPros {
+interface TipPros {
+    handleOnChangeTipComponent: (e: React.ChangeEvent<HTMLInputElement>) => void
+}
 
-// }
-
-export const Tip = () => {
-
-    const { handleOnChangeTipComponent } = useTip()
+export const Tip = ({ handleOnChangeTipComponent }: TipPros) => {
 
     return <>
         <div id="TipContainer">
