@@ -12,10 +12,12 @@ interface TotalProps {
     orderArray: MenuConsumption,
     tipValue: number,
     handleAddOrder: (newOrder: MenuItemConsumption) => void,
-    handleOnChangeTipComponent: (e: React.ChangeEvent<HTMLInputElement>) => void
+    handleOnChangeTipComponent: (e: React.ChangeEvent<HTMLInputElement>) => void,
+    handleSubstractOrder: (itemName: string) => void,
+    handleDeleteOrder: (itemName: string) => void
 }
 
-export const Total = ({ orderArray, tipValue, handleAddOrder, handleOnChangeTipComponent }: TotalProps) => {
+export const Total = ({ orderArray, tipValue, handleAddOrder, handleOnChangeTipComponent, handleSubstractOrder, handleDeleteOrder }: TotalProps) => {
     if (orderArray.length === 0) {
         return <>
             <div id="TotalContainer">
@@ -33,7 +35,7 @@ export const Total = ({ orderArray, tipValue, handleAddOrder, handleOnChangeTipC
 
                 <div id='TotalItemsContainer'>
                     {orderArray.map((MenuOrder) => {
-                        return <TotalItem itemName={MenuOrder.name} itemPrice={MenuOrder.price} itemCuantity={MenuOrder.cuantity} key={MenuOrder.name} handleAddOrder={handleAddOrder}></TotalItem>
+                        return <TotalItem itemName={MenuOrder.name} itemPrice={MenuOrder.price} itemCuantity={MenuOrder.cuantity} key={MenuOrder.name} handleAddOrder={handleAddOrder} handleSubstractOrder={handleSubstractOrder} handleDeleteOrder={handleDeleteOrder}></TotalItem>
                     })}
                 </div>
 

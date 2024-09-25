@@ -12,9 +12,11 @@ interface TotalItemProps {
     itemPrice: number,
     itemCuantity: number,
     handleAddOrder: (newOrder: MenuItemConsumption) => void,
+    handleSubstractOrder: (itemName: string) => void,
+    handleDeleteOrder: (itemName: string) => void
 }
 
-export const TotalItem = ({ itemName, itemPrice, itemCuantity, handleAddOrder }: TotalItemProps) => {
+export const TotalItem = ({ itemName, itemPrice, itemCuantity, handleAddOrder, handleSubstractOrder, handleDeleteOrder }: TotalItemProps) => {
 
 
     return <>
@@ -28,10 +30,10 @@ export const TotalItem = ({ itemName, itemPrice, itemCuantity, handleAddOrder }:
                 <button id='addButton' className='TotalItemButton' onClick={() => { handleAddOrder({ name: itemName, price: itemPrice, cuantity: itemCuantity }) }}>
                     <img src={addImg} alt="" />
                 </button>
-                <button id='subtractButton' className='TotalItemButton'>
+                <button id='subtractButton' className='TotalItemButton' onClick={() => { handleSubstractOrder(itemName) }}>
                     <img src={substractImg} alt="" />
                 </button>
-                <button id='deleteButton' className='TotalItemButton'>
+                <button id='deleteButton' className='TotalItemButton' onClick={() => { handleDeleteOrder(itemName)}}>
                     <img src={deleteImg} alt="" />
                 </button>
             </div>
