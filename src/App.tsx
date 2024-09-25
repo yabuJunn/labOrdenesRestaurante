@@ -13,7 +13,7 @@ function App() {
 
   const { order, handleAddOrder, handleSubstractOrder, handleDeleteOrder, handleSetOrder } = useOrder()
 
-  const { tip, handleOnChangeTipComponent } = useTip()
+  const { tip, handleOnChangeTipComponent, handleSetTip } = useTip()
 
   console.log("New tipValue: ", tip)
 
@@ -22,7 +22,7 @@ function App() {
 
     <div id='menuAndResultContainer'>
       <Menu AddItem={handleAddOrder}></Menu>
-      <Total orderArray={order} tipValue={tip} handleAddOrder={handleAddOrder} handleOnChangeTipComponent={handleOnChangeTipComponent} handleSubstractOrder={handleSubstractOrder} handleDeleteOrder={handleDeleteOrder} handleSetOrder={handleSetOrder}></Total>
+      <Total orderArray={order} tipValue={tip} handleAddOrder={handleAddOrder} handleOnChangeTipComponent={handleOnChangeTipComponent} handleSubstractOrder={handleSubstractOrder} handleDeleteOrder={handleDeleteOrder} handleSetOrder={handleSetOrder} handleSetTip={handleSetTip}></Total>
     </div>
   </>
 }

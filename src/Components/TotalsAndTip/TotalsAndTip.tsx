@@ -17,7 +17,7 @@ export const TotalsAndTip = ({ orderArray, tipValue }: TotalsAndTipProps) => {
         <div id="TotalsAndTipContainer">
             <h3>Totals and Tip</h3>
             <p>Subtotal payable: ${subtotal}</p>
-            <p>Tip:  ${tip}</p>
+            <p>Tip:  ${tip.toFixed(2)}</p>
             <p>Total: ${total}</p>
         </div>
     </>

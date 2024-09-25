@@ -9,8 +9,8 @@ export const Tip = ({ handleOnChangeTipComponent, tipValue }: TipPros) => {
     if (tipValue === 0) {
         return <>
             <div id="TipContainer">
-                <h3>Tip:</h3>
-                <p>Select the percentage you want to tip</p>
+                <h3>Tip</h3>
+                <p>Select the percentage you want to tip:</p>
                 <form id="TipForm">
                     <div className="tipOption">
                         <label htmlFor="tip-0">0%</label>

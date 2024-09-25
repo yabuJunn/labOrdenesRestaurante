@@ -1,9 +1,15 @@
 #MenuHeader {
     width: 100%;
     background-color: #2D18BF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0 0 30px 0;
 }
 
 #MenuHeader h1 {
     color: white;
     padding: 1% 0 1% 0;
+    margin: 0 0 0 20px;
 }

@@ -1,8 +1,40 @@
 #TotalContainer {
     width: 50%;
 
-    border: 1px solid purple;
-
     display: flex;
     flex-direction: column;
+
+    margin: 0px 20px 0 20px;
+    border: 6px solid #d4d4dc;
+    border-radius: 6px;
+}
+
+#TotalContainer2 {
+   
+    display: flex;
+    flex-direction: column;
+
+    margin: 20px;
+}
+
+#TotalItemsContainer {
+    margin: 15px 0 15px 0;
+}
+
+.TotalItemDivider {
+    width: 100%;
+    height: 2px;
+    background-color: #f9f9fa;
+}
+
+#placeOrderButton {
+    font-size: 22px;
+    font-weight: bold;
+
+    padding: 5px;
+    border: none;
+    border-radius: 8px;
+
+    color: white;
+    background-color: #2D18BF;
 }
