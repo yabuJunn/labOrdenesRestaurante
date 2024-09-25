@@ -4,6 +4,10 @@ import { MenuConsumption, MenuItemConsumption } from "../Types/MenuTypes"
 export const useOrder = () => {
     const [order, setOrder] = useState<MenuConsumption>([])
 
+    const handleSetOrder = (newOrder: MenuConsumption) => {
+        setOrder(newOrder)
+    }
+
     const handleAddOrder = (newOrder: MenuItemConsumption) => {
         setOrder((prevOrder) => {
             const found = prevOrder.find(o => o.name === newOrder.name)
@@ -55,6 +59,7 @@ export const useOrder = () => {
 
     return {
         order,
+        handleSetOrder,
         handleAddOrder,
         handleSubstractOrder,
         handleDeleteOrder

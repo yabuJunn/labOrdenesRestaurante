@@ -14,10 +14,11 @@ interface TotalProps {
     handleAddOrder: (newOrder: MenuItemConsumption) => void,
     handleOnChangeTipComponent: (e: React.ChangeEvent<HTMLInputElement>) => void,
     handleSubstractOrder: (itemName: string) => void,
-    handleDeleteOrder: (itemName: string) => void
+    handleDeleteOrder: (itemName: string) => void,
+    handleSetOrder: (newOrder: MenuConsumption) => void
 }
 
-export const Total = ({ orderArray, tipValue, handleAddOrder, handleOnChangeTipComponent, handleSubstractOrder, handleDeleteOrder }: TotalProps) => {
+export const Total = ({ orderArray, tipValue, handleAddOrder, handleOnChangeTipComponent, handleSubstractOrder, handleDeleteOrder, handleSetOrder }: TotalProps) => {
     if (orderArray.length === 0) {
         return <>
             <div id="TotalContainer">
@@ -31,7 +32,7 @@ export const Total = ({ orderArray, tipValue, handleAddOrder, handleOnChangeTipC
         return <>
             <div id="TotalContainer">
                 <h2>Consumption Summary</h2>
-                <p>Order is something</p>
+                <p>This is your order</p>
 
                 <div id='TotalItemsContainer'>
                     {orderArray.map((MenuOrder) => {
@@ -39,8 +40,12 @@ export const Total = ({ orderArray, tipValue, handleAddOrder, handleOnChangeTipC
                     })}
                 </div>
 
-                <Tip handleOnChangeTipComponent={handleOnChangeTipComponent}></Tip>
+                <Tip handleOnChangeTipComponent={handleOnChangeTipComponent} tipValue={tipValue}></Tip>
                 <TotalsAndTip orderArray={orderArray} tipValue={tipValue}></TotalsAndTip>
+
+                <button onClick={() => { handleSetOrder([]) }}>
+                    Place order
+                </button>
             </div>
         </>
     }

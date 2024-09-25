@@ -11,20 +11,18 @@ import { Total } from './Components/Total/Total'
 
 function App() {
 
-  const { order, handleAddOrder, handleSubstractOrder, handleDeleteOrder } = useOrder()
+  const { order, handleAddOrder, handleSubstractOrder, handleDeleteOrder, handleSetOrder } = useOrder()
 
   const { tip, handleOnChangeTipComponent } = useTip()
 
   console.log("New tipValue: ", tip)
-
-  const array = ["a", "b", "c"]
 
   return <>
     <Title></Title>
 
     <div id='menuAndResultContainer'>
       <Menu AddItem={handleAddOrder}></Menu>
-      <Total orderArray={order} tipValue={tip} handleAddOrder={handleAddOrder} handleOnChangeTipComponent={handleOnChangeTipComponent} handleSubstractOrder={handleSubstractOrder} handleDeleteOrder={handleDeleteOrder}></Total>
+      <Total orderArray={order} tipValue={tip} handleAddOrder={handleAddOrder} handleOnChangeTipComponent={handleOnChangeTipComponent} handleSubstractOrder={handleSubstractOrder} handleDeleteOrder={handleDeleteOrder} handleSetOrder={handleSetOrder}></Total>
     </div>
   </>
 }
